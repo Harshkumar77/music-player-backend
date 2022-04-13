@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express")
 const YoutubeMusicApi = require("youtube-music-api")
 const ytdl = require("ytdl-core")
