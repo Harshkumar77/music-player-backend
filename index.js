@@ -30,11 +30,9 @@ app.get("/api/search", async (req, res) => {
 
 app.get("/api/getMusic", async (req, res) => {
   const videoId = req.query.v
-  res.redirect(
-    (
-      await ytdl.getInfo("https://www.youtube.com/watch?v=" + videoId)
-    ).formats.filter((_) => _.hasVideo === false)[0].url
-  )
+  ytdl("https://www.youtube.com/watch?v=" + videoId, {
+    filter: (_) => _.hasVideo === false,
+  }).pipe(res)
 })
 
 app.get("*", (req, res) => res.sendFile(__dirname + "/build/index.html"))
