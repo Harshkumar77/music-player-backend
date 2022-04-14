@@ -2,6 +2,7 @@ require("dotenv").config()
 const express = require("express")
 const YoutubeMusicApi = require("youtube-music-api")
 const ytdl = require("ytdl-core")
+const fs = require("node:fs")
 
 const ytApi = new YoutubeMusicApi()
 ytApi.initalize()
@@ -30,9 +31,15 @@ app.get("/api/search", async (req, res) => {
 
 app.get("/api/getMusic", async (req, res) => {
   const videoId = req.query.v
+
   ytdl("https://www.youtube.com/watch?v=" + videoId, {
-    filter: (_) => _.hasVideo === false,
-  }).pipe(res)
+    filter: (_) => _.hasAudio === true && _.container === "webm",
+  }).pipe(fs.createWriteStream(`static/${videoId}.webm`))
+
+  setTimeout(() => {
+    res.sendFile(__dirname + `/static/${videoId}.webm`)
+    setTimeout(() => fs.unlink(__dirname + `/static/${videoId}.webm`), 12000)
+  }, 3000)
 })
 
 app.get("*", (req, res) => res.sendFile(__dirname + "/build/index.html"))
