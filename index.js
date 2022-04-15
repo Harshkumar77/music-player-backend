@@ -34,12 +34,7 @@ app.get("/api/getMusic", async (req, res) => {
 
   ytdl("https://www.youtube.com/watch?v=" + videoId, {
     filter: (_) => _.hasAudio === true && _.container === "webm",
-  }).pipe(fs.createWriteStream(`static/${videoId}.webm`))
-
-  setTimeout(() => {
-    res.sendFile(__dirname + `/static/${videoId}.webm`)
-    setTimeout(() => fs.unlink(__dirname + `/static/${videoId}.webm`), 12000)
-  }, 3000)
+  }).pipe(res)
 })
 
 app.get("*", (req, res) => res.sendFile(__dirname + "/build/index.html"))
