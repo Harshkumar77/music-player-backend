@@ -26,7 +26,7 @@ app.get("/api", (_, res) => res.send("Yay api is running"))
 
 app.get("/api/search", async (req, res) => {
   const searchQuery = req.query.q
-  res.json((await ytApi.search(searchQuery, "song")).content.slice(0, 6))
+  res.json((await ytApi.search(searchQuery, "song")).content.slice(0, 10))
 })
 
 app.get("/api/getMusic", async (req, res) => {
@@ -41,7 +41,6 @@ app.get("/api/getMusic", async (req, res) => {
     res.status(400).send("Requires Range header")
     return
   }
-  const videoPath = "Chris-Do.mp4"
   const videoSize = videoInfo.contentLength
   const CHUNK_SIZE = 10 ** 5
   const start = Number(range.replace(/\D/g, ""))
