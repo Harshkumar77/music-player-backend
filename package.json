@@ -6,11 +6,11 @@
   "scripts": {
     "dev-start": "nodemon index.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "youtube-music-api": "^1.0.6",
