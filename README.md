@@ -18,7 +18,7 @@ We welcome contributions to make Music Nation Code even better! If you would lik
 
 ## Support
 
-If you encounter any issues or have questions about the application, you can reach out to our team at support@musicnationcode.com.
+If you encounter any issues or have questions about the application, open a issue
 
 ## License
 
