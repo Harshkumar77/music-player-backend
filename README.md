@@ -9,8 +9,8 @@ Welcome to Music Nation Code, a fantastic application that allows you to listen 
 - 🖥️ Backend with Node.js: The backend is developed with Node.js, offering a robust foundation for handling various functionalities of the application.
 - 📡 Efficient Song Streaming: Our Express server efficiently streams songs using packets obtained from the backend, which intelligently fetches the requested songs from YouTube.
 
-## Preview
-https://github.com/Harshkumar77/music-player-backend/assets/72347597/75cd6e3a-e315-4e89-a868-f76bdc3c1a71
+## Preview (Click on image)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/MtwNOeSLQ1g/hqdefault.jpg)](https://www.youtube.com/watch?v=MtwNOeSLQ1g)
 
 ## Contribution
 
@@ -29,6 +29,17 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 We hope you have an amazing experience discovering and enjoying your favorite songs. Happy listening! 🎧🎶
 
 
-[Client code](https://github.com/Harshkumar77/music-player-client)
+# [Client code](https://github.com/Harshkumar77/music-player-client)
 
 
+
+
+
+
+
+
+
+
+
+
+[comment]: # (This actually is the most platform independent comment--https://github.com/Harshkumar77/music-player-backend/assets/72347597/75cd6e3a-e315-4e89-a868-f76bdc3c1a71 )
